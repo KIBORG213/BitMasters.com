@@ -1,110 +1,78 @@
+
 body {
-    font-family: 'Arial', sans-serif; /* Змінюємо шрифт */
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.featured-game {
-    padding: 20px;
-    text-align: center;
-    background-color: #ccc; /* Сірий фон */
-    color: #333; /* Чорний текст */
-    border-radius: 10px; /* Завкруглені кути */
-}
-
-.featured-game img {
-    max-width: 50%;
-    height: auto;
-    margin-bottom: 20px;
-    background-color: #7c6666;
-    border-radius: 40px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 20px;
-}
-
-.column {
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0 20px;
-    background-color: #333;
-    color: #fff;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
-
-.column img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: #000;
+.heart {
+    font-size: 10vw;
+    color: red;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
 }
-
-.Donate {
-    margin-top: 20px;
-    text-align: center; /* Центруємо текст */
-    background-color: #ccc; /* Сірий фон */
-    padding: 10px; /* Збільшуємо відступи для кращого вигляду */
-    border-radius: 10px; /* Завкруглені кути */
+.explode {
+    transform: scale(5);
+    opacity: 0;
 }
-
-.column button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+p {
+    font-size: 3vw;
+    margin: 10px 0;
+    max-width: 80%;
+    transition: opacity 0.5s;
+}
+.hidden {
+    opacity: 0;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+}
+button {
+    font-size: 2.5vw;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s, font-size 0.3s;
+    position: absolute;
 }
-
-.column button:hover {
-    background-color: #0056b3;
+.green {
+    background-color: green;
+    color: white;
+    position: static;
 }
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto;
+.red {
+    background-color: red;
+    color: white;
 }
-
-
-.title {
-    background-color: #333; 
-    padding: 24px;
+.final-text {
+    font-size: 4vw;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
-.title h2 {
-    color: #ccc;
-}
-.title p {
-    color: #ccc;
+@media (max-width: 600px) {
+    .heart {
+        font-size: 15vw;
+    }
+    p {
+        font-size: 5vw;
+    }
+    button {
+        font-size: 4vw;
+    }
+    .final-text {
+        font-size: 6vw;
+    }
 }
